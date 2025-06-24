@@ -10,13 +10,19 @@ while True :
 
 
     if game == "y" :
-        your_cards = random.choices(list_of_cards,k=2)
-        computer_cards = random.choices(list_of_cards,k=1)
+        your_cards = random.sample(list_of_cards,k=2)
+        computer_cards = random.sample(list_of_cards,k=2)
         print(f"your_cards: {your_cards} , current score: {sum(your_cards)} ")
         print(f"Computer's first card: {computer_cards[0]}")
-        if sum(your_cards) == 21 :
-                print("Black Jack !!!")
-                print("You Win")
+        if sum(your_cards) == 21 and sum(computer_cards)==21 :
+            print("Draw")
+        elif sum(your_cards)==21 :
+            print("Black Jack !!!")
+            print("You Win")
+        elif sum(computer_cards) == 21 :
+            print(f"Computer's cards: {computer_cards}, score: 21")
+            print("Your Opponent got Blackjack!!!")
+            print("You Lose")
 
         else :
             while sum(your_cards)<=21 :
@@ -55,12 +61,6 @@ while True :
                         print(f"Computer's final hand: {computer_cards}, final score: {sum(computer_cards)}")
                         print("You went over. YOU LOSE !!! ")
                         break
-                        
-    play_again = input("Do you want to play another game? Type 'y' or 'n': ")
-    while play_again != "y" and play_again != "n":
-        print("Choose from 'y' or 'n' only.")
-        play_again = input("Do you want to play another game? Type 'y' or 'n': ")
-    if play_again == "n":
-        print("Thanks for playing. Goodbye!")
-        break
-        
+    else :
+        break                  
+    
