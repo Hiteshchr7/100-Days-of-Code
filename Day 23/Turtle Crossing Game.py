@@ -12,9 +12,7 @@ player = Player()
 score = Scoreboard()
 cars = CarManager()
 
-
 screen.listen()
-
 screen.onkeypress(fun=player.move, key="Up")
 
 game_is_on = True
@@ -35,7 +33,5 @@ while game_is_on:
         if player.distance(car) < 20 :
             score.gameover()
             game_is_on = False
-
-
 
 screen.exitonclick()
