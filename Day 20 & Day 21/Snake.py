@@ -35,6 +35,13 @@ class Snake :
             self.snake[seg].goto(new_x,new_y)
         self.head.forward(move_dist)
 
+    def respawn(self):
+        for seg in self.snake :
+            seg.goto(1000,1000)
+        self.snake.clear()
+        self.create_snake()
+        self.head = self.snake[0]
+
     def up(self):
         if self.head.heading() != Down:
             self.head.setheading(Up)

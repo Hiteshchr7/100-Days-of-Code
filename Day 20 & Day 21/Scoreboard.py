@@ -8,6 +8,8 @@ class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
+        with open("highscore.txt") as data:
+            self.highscore = int(data.read())
         self.color("white")
         self.penup()
         self.goto(0,280)
@@ -15,13 +17,22 @@ class Scoreboard(Turtle):
         self.hideturtle()
         
     def update_score(self):
-        self.write(arg = f"Score: {self.score} ", move = False, align = Alignment,font=Font)
+        self.clear()
+        self.write(arg = f"Score: {self.score} High Score: {self.highscore}", move = False, align = Alignment,font=Font)
 
     def increase_score(self):
         self.score += 1
-        self.clear()
+        #self.clear()
         self.update_score()
 
-    def gameover(self):
+    def reset(self):
+        if self.score > self.highscore :
+            self.highscore = self.score
+        with open("highscore.txt",mode="w") as file :
+            file.write(f"{self.highscore}")
+        self.score = 0
+        self.update_score()
+
+    '''def gameover(self):
         self.goto(0,0)
-        self.write(arg="Game Over",align=Alignment,font=Font)
+        self.write(arg="Game Over",align=Alignment,font=Font)'''
