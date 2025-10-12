@@ -1,0 +1,15 @@
+.vscode 
+# Python cache and compiled files
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+
+# Any OS-specific files
+Thumbs.db
+.DS_Store
