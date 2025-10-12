@@ -1,15 +1,4 @@
-logo = """
-                          _________
-                          )_______(
-                          |"""""""|_.-._,.---------.,_.-._
-                          |       | | |               | | ''-.
-                          |       |_| |_             _| |_..-'
-                          |_______| '-'''----------'' '-'
-                          )"""""""(
-                         |_________|
-                         
-                       .-------------.
-                      /_______________\ """
+from art import logo
 print(logo,'\n')
 
 def max_bid(bid_data):
@@ -35,8 +24,7 @@ while start :
     while next_bid != 'yes' and next_bid !=  'no' :
         print("You didn't choose from specified inputs. Choose Again from 'yes' or 'no'")
         next_bid = input("Are there any other bidders? Type 'yes' or 'no'.")
-    if next_bid == "no" :
-        
+    if next_bid == "no" : 
         start = False
         max_bid(data)
     
