@@ -17,6 +17,7 @@ else :
 for i in range(no_of_attempts+1):
     if no_of_attempts-i == 0 :
         print("You have run out of guesses. YOU LOSE ")
+        print(num)
         break
         
     print(f"You have {no_of_attempts-i} attempts remaining to guess the number.")
