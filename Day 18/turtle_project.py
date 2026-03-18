@@ -1,6 +1,7 @@
 from turtle import Turtle,Screen,colormode
 import random
-colormode(255)
+colormode(255) #By default, the turtle module uses a color mode where R,G,B values must be floats in the range 0.0 to 1.0.
+               #But by using colormode(255) we can change the rgb values to the range of 0 to 255
 the_ninja_turtle = Turtle()
 the_ninja_turtle.shape("turtle")
 colours = ["medium blue","cyan","aquamarine","green yellow","yellow","crimson","medium slate blue","magenta"]
