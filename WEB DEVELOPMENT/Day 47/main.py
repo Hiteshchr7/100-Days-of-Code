@@ -28,7 +28,7 @@ response  = requests.get(url_live,headers=header)
 soup = BeautifulSoup(response.text,"html.parser")
 price_whole = soup.find(name="span", class_ = "a-price-whole").getText()
 price_decimal = soup.find(name="span", class_ = "a-price-fraction").get_text()
-current_price = float(price_whole+price_decimal) 
+current_price = float(price_whole.replace(',','')+price_decimal) 
 title = soup.find(id="productTitle").get_text().strip()
 print(current_price)
 if current_price < 100 :
